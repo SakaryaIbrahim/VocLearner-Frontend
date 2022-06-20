@@ -11,7 +11,6 @@
       <option name="SPACES_WITHIN_IMPORTS" value="true" />
     </JSCodeStyleSettings>
     <codeStyleSettings language="JavaScript">
-      <option name="BLOCK_COMMENT_ADD_SPACE" value="true" />
       <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
       <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
       <option name="ALIGN_MULTILINE_FOR" value="false" />

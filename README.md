@@ -1,4 +1,4 @@
-np[![CI](https://github.com/IkhrazneMohamed/voclearning/actions/workflows/ci.yml/badge.svg)](https://github.com/IkhrazneMohamed/voclearning/actions/workflows/ci.yml)
+[![CI](https://github.com/SakaryaIbrahim/VocLearner-Frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/SakaryaIbrahim/VocLearner-Frontend/actions/workflows/ci.yml)
 
 # voclearn
 
