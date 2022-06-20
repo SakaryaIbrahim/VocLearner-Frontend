@@ -1,5 +1,5 @@
 <template>
-  <div @load>
+  <div>
     <h2></h2>
     <input v-model="testAnswer" type="text" id="vocTest">
     <button id="submit" @click="checkTheWord">Submit</button>
@@ -36,8 +36,8 @@ export default {
   },
   beforeMount () {
     const myHeader = new Headers()
-    myHeader.append('Accept','application/json')
-    myHeader.append('Content-type','application/json')
+    myHeader.append('Accept', 'application/json')
+    myHeader.append('Content-type', 'application/json')
     const requestOptions = {
       methods: 'GET',
       headers: myHeader,
