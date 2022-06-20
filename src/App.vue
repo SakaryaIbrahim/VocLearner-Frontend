@@ -1,6 +1,5 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link>
     <router-link to="/Voc">Voc learn</router-link>
     <router-link to="/play">Test your Knowledge</router-link>
   </nav>

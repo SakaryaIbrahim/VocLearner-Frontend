@@ -21,6 +21,7 @@ export default {
     saveDataInDatabase () {
       const myheader = new Headers()
       myheader.append('Content-type', 'application/json')
+      myheader.append('Accept', 'application/json')
       const content = {
         word: this.word,
         language: 'english',
@@ -31,10 +32,9 @@ export default {
       const requestOptions = {
         method: 'POST',
         headers: myheader,
-        body: content,
-        redirect: 'follow'
+        body: JSON.stringify(content)
       }
-      fetch('http://localhost:8080/wordtranslation', requestOptions).catch(error => console.log('error', error))
+      fetch('https://voclearner.herokuapp.com/api/v1/wordtranslation', requestOptions).catch(error => console.log('error', error))
     },
     deleteData () {
       const myheader = new Headers()
@@ -45,10 +45,10 @@ export default {
       const requestOptions = {
         method: 'DELETE',
         headers: myheader,
-        body: content,
+        body: JSON.stringify(content),
         redirect: 'follow'
       }
-      fetch('http://localhost:8080/word', requestOptions).catch(error => console.log('error', error))
+      fetch('http://localhost:8080/api/v1/wordtranslation', requestOptions).catch(error => console.log('error', error))
     }
   }
 }
