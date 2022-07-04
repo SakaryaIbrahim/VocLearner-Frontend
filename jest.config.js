@@ -1,7 +1,7 @@
 module.exports = {
   testMatch: [
-    '<rootDir>/tests/unit/*.spec.js',
-    '<rootDir>/tests/unit/*.spec.jsx'
+    '<rootDir>/tests/unit/*.test.js',
+    '<rootDir>/tests/unit/*.test.jsx'
   ],
   preset: '@vue/cli-plugin-unit-jest'
 }
