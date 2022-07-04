@@ -8,4 +8,10 @@ describe('test App view', () => {
     const vocLogo = wrapper.findComponent(VocLog)
     expect(vocLogo.exists()).toBeTruthy()
   })
+
+  it('should have a router called voclearn', () => {
+    const wrapper = mount(App)
+
+    expect(wrapper.html()).toContain('VocLearn')
+  })
 })
