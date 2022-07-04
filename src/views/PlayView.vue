@@ -66,7 +66,7 @@ export default {
       this.displayWrong = ''
       this.wordForPlay = ''
       this.pickFiveWords()
-      this.displayAnimation()
+      /* this.displayAnimation() */
     },
     pickFiveWords () {
       this.wordData = {}
@@ -126,8 +126,8 @@ export default {
         case 0.8: return 1
         case 0.5: return 0.8
       }
-    },
-    displayAnimation () {
+    }
+    /* displayAnimation () {
       const elem = document.getElementById('wordToPlay')
       let counter = 0
       clearInterval(this.id)
@@ -141,7 +141,7 @@ export default {
           elem.style.left = counter + 'px'
         }
       }
-    }
+    } */
   },
   beforeMount () {
     const myHeader = new Headers()
@@ -178,12 +178,13 @@ export default {
 }
 
 #animation{
-  width: 350px;
-  height: 350px;
-  background-color: yellow;
+  width: 340px;
+  height: 340px;
   position: relative;
   margin-left: 285px;
   margin-bottom: 20px;
+  border-color: #2c3e50;
+  border-style: groove;
 }
 
 #wordToPlay{
@@ -191,8 +192,10 @@ export default {
   height: 50px;
   color: blue;
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-size: medium;
+  font-size: x-large;
   position: absolute;
+  margin-left: 130px;
+  margin-top: 150px;
 }
 
 #right-answer,#false-answer{

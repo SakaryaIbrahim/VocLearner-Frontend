@@ -3,7 +3,8 @@
       <div id="html-components">
         <div>
           <div>
-            <input v-model="word" type="text" placeholder="Enter new Word" id="word">
+            <p class="subTitles">Word</p>
+            <input v-model="word" type="text" placeholder="" id="word">
             <select id="language" name="languages" v-model="language">
                <option value="german">German</option>
                <option value="english">English</option>
@@ -12,8 +13,9 @@
             </select>
           </div>
           <div>
-             <input v-model="translation" type="text" placeholder="Enter a Translation" id="translation">
-             <select id="translanuage" name="languages" v-model="transLanguage">
+            <p class="subTitles">Translation</p>
+             <input v-model="translation" type="text" placeholder="" id="translation">
+             <select id="translanuage" name="transLanguages" v-model="transLanguage">
                 <option value="german">German</option>
                 <option value="english">English</option>
                 <option value="french">French</option>
@@ -24,7 +26,7 @@
       <button id="save" @click="saveDataInDatabase">Save</button><br>
       </div>
       <div>
-        <input v-model="worddelete" type="text" id="delete-word" placeholder="Word to be delete" ><br>
+        <input v-model="worddelete" type="text" id="delete-word" placeholder="Enter a Word" ><br>
         <button id="delete" @click="changeTheData">Delete</button>
       </div>
 
@@ -106,17 +108,26 @@ export default {
   height: 50vh;
   padding-top: 40px;
 }
+
+.subTitles{
+  color: #2c3e50;
+  font-size: medium;
+  padding-right: 540px;
+}
+
 /*input style*/
 input{
-  margin-top: 20px;
+  margin-bottom: 20px;
   width: 30vw;
   height: 3vh;
 }
+
 /*select feld style*/
 select{
   width: 10vw;
   height: 3.75vh;
 }
+
 /*buttons style*/
 button{
   margin-top: 20px;
@@ -125,6 +136,7 @@ button{
   width: 10vw;
   height: 3vh;
 }
+
 /*word to be deleted style*/
 #delete-word{
   display: none;
