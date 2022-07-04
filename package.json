@@ -4,10 +4,9 @@
   "private": true,
   "engines": {
     "node": "16.x",
-    "npm": "8.x"
+    "npm": "8.5.5"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
