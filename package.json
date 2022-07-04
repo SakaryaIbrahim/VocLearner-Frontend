@@ -7,7 +7,7 @@
     "npm": "8.12.2"
   },
   "scripts": {
-    "start": "vue-cli-service serve",
+    "start": "vue-cli-service serve --passWithNoTests",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
