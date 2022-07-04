@@ -1,4 +1,4 @@
-[![CI](https://github.com/SakaryaIbrahim/VocLearner-Frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/SakaryaIbrahim/VocLearner-Frontend/actions/workflows/ci.yml)
+[![CI](https://github.com/IkhrazneMohamed/voclearning/actions/workflows/ci.yml/badge.svg)](https://github.com/IkhrazneMohamed/voclearning/actions/workflows/ci.yml)
 
 # voclearn
 
@@ -9,7 +9,7 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run start
+npm run serve
 ```
 
 ### Compiles and minifies for production

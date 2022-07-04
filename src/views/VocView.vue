@@ -1,66 +1,133 @@
 <template>
-  <div>
-    <input v-model="word" type="text" placeholder="Enter new Word" id="word">
-    <input v-model="translation" type="text" placeholder="Enter a Translation" id="translation">
-    <button id="save" @click="saveDataInDatabase">Save</button>
-    <button id="delete">Delete</button>
-  </div>
+    <div class="container">
+      <div id="html-components">
+        <div>
+          <div>
+            <input v-model="word" type="text" placeholder="Enter new Word" id="word">
+            <select id="language" name="languages" v-model="language">
+               <option value="german">German</option>
+               <option value="english">English</option>
+               <option value="french">French</option>
+               <option value="spanish">Spanish</option>
+            </select>
+          </div>
+          <div>
+             <input v-model="translation" type="text" placeholder="Enter a Translation" id="translation">
+             <select id="translanuage" name="languages" v-model="transLanguage">
+                <option value="german">German</option>
+                <option value="english">English</option>
+                <option value="french">French</option>
+                <option value="spanish">Spanish</option>
+             </select>
+          </div>
+        </div>
+      <button id="save" @click="saveDataInDatabase">Save</button><br>
+      </div>
+      <div>
+        <input v-model="worddelete" type="text" id="delete-word" placeholder="Word to be delete" ><br>
+        <button id="delete" @click="changeTheData">Delete</button>
+      </div>
+
+    </div>
+    <!-- delete word block-->
 </template>
 
 <script>
+
 export default {
   name: 'VocView',
   props: [''],
   data () {
     return {
       word: '',
-      translation: ''
+      language: '',
+      translation: '',
+      transLanguage: '',
+      wordToBeDelete: '',
+      worddelete: ''
     }
   },
   methods: {
     saveDataInDatabase () {
       const myheader = new Headers()
       myheader.append('Content-type', 'application/json')
-      myheader.append('Accept', 'application/json')
       const content = {
-        word: this.word,
-        language: 'english',
-        translation: this.translation,
-        tansLanguage: 'translation'
+        word: this.word.trim(),
+        language: this.language,
+        translation: this.translation.trim(),
+        transLanguage: this.transLanguage
       }
 
       const requestOptions = {
         method: 'POST',
         headers: myheader,
-        body: JSON.stringify(content)
-      }
-      fetch('https://voclearner.herokuapp.com/api/v1/wordtranslation', requestOptions).catch(error => console.log('error', error))
-    },
-    deleteData () {
-      const myheader = new Headers()
-      myheader.append('Content-type', 'application/json')
-      const content = {
-        word: this.word
-      }
-      const requestOptions = {
-        method: 'DELETE',
-        headers: myheader,
         body: JSON.stringify(content),
         redirect: 'follow'
       }
-      fetch('http://localhost:8080/api/v1/wordtranslation', requestOptions).catch(error => console.log('error', error))
+      if (this.word.length !== 0 && this.language.length !== 0 && this.translation.length !== 0 && this.transLanguage.length !== 0) {
+        fetch('https://voclearner.herokuapp.com/api/v1/wordtranslation', requestOptions).catch(error => console.log('error', error))
+      } else {
+        alert('It\'s impossible ! All information are important')
+      }
+    },
+    deleteData (wor) {
+      const myheader = new Headers()
+      myheader.append('Content-type', 'application/json')
+
+      const requestOptions = {
+        method: 'DELETE',
+        headers: myheader,
+        body: wor,
+        redirect: 'follow'
+      }
+      fetch('https://voclearner.herokuapp.com/api/v1/wordtranslation', requestOptions).catch(error => console.log('error', error))
+    },
+    changeTheData () {
+      if (this.worddelete.length !== 0) {
+        this.deleteData(this.worddelete)
+      } else {
+        document.getElementById('delete-word').style.display = 'inline'
+        document.getElementById('html-components').style.backgroundColor = 'gray'
+        document.getElementById('html-components').style.opacity = '0.2'
+      }
     }
   }
 }
 </script>
 
 <style scoped>
-#word, #translation{
+
+.container{
   border-style: groove;
-  border-color: azure;
-  border-radius: 5px;
-  color: aliceblue;
-  width: 50px;
-  height: 10px
+  border-width: 2px;
+  border-top: none;
+  width: 60vw;
+  margin-left: 20vw;
+  height: 50vh;
+  padding-top: 40px;
 }
+/*input style*/
+input{
+  margin-top: 20px;
+  width: 30vw;
+  height: 3vh;
+}
+/*select feld style*/
+select{
+  width: 10vw;
+  height: 3.75vh;
+}
+/*buttons style*/
+button{
+  margin-top: 20px;
+  background-color: lightgreen;
+  color: black;
+  width: 10vw;
+  height: 3vh;
+}
+/*word to be deleted style*/
+#delete-word{
+  display: none;
+}
+
 </style>

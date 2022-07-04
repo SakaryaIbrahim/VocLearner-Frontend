@@ -1,8 +1,10 @@
 <template>
-  <nav>
-    <router-link to="/Voc">Voc learn</router-link>
-    <router-link to="/play">Test your Knowledge</router-link>
-  </nav>
+  <VocLogo></VocLogo>
+  <div class="app-conatainer">
+    <button id="voclearn"><router-link to="/Voc">Voc Learn</router-link></button>
+    <button id="playTest"><router-link to="/play">Test Your Knowledge</router-link></button>
+  </div>
+  <div class="top-line"></div>
   <router-view/>
 </template>
 
@@ -14,17 +16,26 @@
   text-align: center;
   color: #2c3e50;
 }
-
-nav {
-  padding: 30px;
+.app-conatainer{
+  margin-top: 20px;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.top-line{
+  border-color: gray;
+  border-top-style: groove;
+  width: 60vw;
+  margin-left: 20vw;
+  box-shadow: 5px 2px 5px 5px gray;
 }
-
-nav a.router-link-exact-active {
-  color: #42b983;
+button{
+  border-style: groove;
+  border-color: lightgreen;
+  background-color: lightgreen;
+  width: 20vw;
 }
 </style>
+<script>
+import VocLogo from '@/components/VocLog'
+export default {
+  components: { VocLogo }
+}
+</script>
