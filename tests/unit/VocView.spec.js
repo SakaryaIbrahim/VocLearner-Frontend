@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
 import VocView from '@/views/VocView'
+require('jest-fetch-mock').enableMocks()
 
 describe('testing VocView.vue', () => {
   it('should test vocView', () => {
